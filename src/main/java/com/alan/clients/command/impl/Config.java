@@ -61,7 +61,7 @@ public final class Config extends Command {
                     File file1 = new File(String.valueOf(configManager.CONFIG_DIRECTORY));
                     desktop.open(file1);
                     ChatUtil.b("command.config.folder");
-                } catch (IllegalArgumentException | IOException illegalargumentexception) {
+                } catch (Exception illegalargumentexception) {
                     ChatUtil.b("command.config.notfound");
                 }
                 break;

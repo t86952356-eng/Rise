@@ -48,7 +48,11 @@ public class MicrosoftLogin {
     }
 
     private static void copy(String string) {
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(string), null);
+        try {
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(string), null);
+        } catch (Exception clipboardException) {
+            System.out.println("[MicrosoftLogin] clipboard unavailable, code: " + string);
+        }
     }
 
     public static void getRefreshToken(Consumer<String> consumer) {

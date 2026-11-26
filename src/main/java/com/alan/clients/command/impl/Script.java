@@ -70,7 +70,7 @@ public final class Script extends Command {
                                                         File file1 = new File(String.valueOf(ScriptManager.SCRIPT_DIRECTORY));
                                                         desktop.open(file1);
                                                         ChatUtil.b("command.script.folder");
-                                                    } catch (IllegalArgumentException | IOException illegalargumentexception) {
+                                                    } catch (Exception illegalargumentexception) {
                                                         ChatUtil.b("command.script.notfoundfolder");
                                                     }
 

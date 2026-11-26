@@ -20,7 +20,7 @@ public class NotificationUtil {
             trayicon.setToolTip("System tray icon demo");
             systemtray.add(trayicon);
             trayicon.displayMessage(var1, var2, var0.getMessageType());
-        } catch (AWTException awtexception) {
+        } catch (Exception awtexception) {
             awtexception.printStackTrace();
         }
     }

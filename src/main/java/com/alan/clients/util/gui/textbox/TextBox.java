@@ -180,10 +180,13 @@ public class TextBox {
                         int i = this.text.length();
                         this.addText(s1, this.aJk);
                         this.aJk = this.aJk + (this.text.length() - i);
-                    } catch (UnsupportedFlavorException | IOException unsupportedflavorexception) {
+                    } catch (Exception unsupportedflavorexception) {
                     }
                 } else if (flag && var2 == 46) {
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(this.text), null);
+                    try {
+                        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(this.text), null);
+                    } catch (Exception clipboardException) {
+                    }
                 } else if (var2 == 211 && !this.text.isEmpty()) {
                     this.aq(this.aJk + 1);
                 } else if (var2 == 14 && !this.text.isEmpty()) {

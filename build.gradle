@@ -106,7 +106,8 @@ dependencies {
     implementation files('libs/libraries.jar')
 
     // compileOnly on purpose: no annotation processor
-    compileOnly 'org.projectlombok:lombok:1.18.22'
+    // 1.18.36: JDK 21 support (1.18.22 crashes on javac 21)
+    compileOnly 'org.projectlombok:lombok:1.18.36'
 }
 
 sourceSets {

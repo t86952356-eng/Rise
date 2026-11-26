@@ -149,7 +149,11 @@ extends Menu {
                 aKi2 = 0;
                 this.aCC = true;
                 StringSelection stringSelection = new StringSelection(string);
-                Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, new StringSelection("Rise"));
+                try {
+                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, new StringSelection("Rise"));
+                } catch (Exception clipboardException) {
+                    System.out.println("[LoginMenu] HWID (clipboard unavailable): " + string);
+                }
             }
             if (aKi2 != 0 && !rip.vantage.security.IntegrityGuard.cV(aKi2 != 0)) {
                 System.out.println("EC92");
@@ -167,9 +171,13 @@ extends Menu {
             this.aX(b2.getE());
             String string3 = null;
             string3 = MachineFingerprint.vW();
-            StringSelection stringSelection = new StringSelection(string3);
-            java.awt.datatransfer.Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-            clipboard.setContents(stringSelection, new StringSelection("Rise"));
+            try {
+                StringSelection stringSelection = new StringSelection(string3);
+                java.awt.datatransfer.Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(stringSelection, new StringSelection("Rise"));
+            } catch (Exception clipboardException) {
+                System.out.println("[LoginMenu] HWID (clipboard unavailable): " + string3);
+            }
             int equalsIgnoreCase2 = this.aCC || b2.getE() != null && b2.getE().equalsIgnoreCase("HWID_MISMATCH") ? 1 : 0;
             if (equalsIgnoreCase2 == 0) return;
             if (this.aCD) return;
@@ -177,7 +185,7 @@ extends Menu {
             this.aCB = string3;
             try {
                 java.awt.Desktop.getDesktop().browse(new java.net.URI("https://youtu.be/jeYDms69hBo"));
-            } catch (java.io.IOException | java.net.URISyntaxException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         };

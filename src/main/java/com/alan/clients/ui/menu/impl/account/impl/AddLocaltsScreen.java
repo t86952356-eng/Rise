@@ -64,31 +64,7 @@ public class AddLocaltsScreen extends GuiScreen implements MenuColors, InstanceA
     private final MenuButton[] menuButtons = new MenuButton[4];
     private static volatile List<LocaltsProduct> products = Collections.emptyList();
     private static volatile int selectedProductIndex = -1;
-    private static final Set<String> BUNDLED_PRODUCT_IMAGES = new HashSet<>(
-        Arrays.asList(
-            "6900ec1c8f13c00afab7c381",
-            "6900ed898f13c00afab7c382",
-            "6900eeb78f13c00afab7c383",
-            "6900ef8e8f13c00afab7c384",
-            "6900f0468f13c00afab7c385",
-            "6900f0dd8f13c00afab7c386",
-            "6900f1688f13c00afab7c387",
-            "6900f29e8f13c00afab7c389",
-            "6900f3538f13c00afab7c38a",
-            "6904936dfa5bca3b23dfbc57",
-            "69049723fa5bca3b23dfbc5b",
-            "6904978cfa5bca3b23dfbc5c",
-            "690497fdfa5bca3b23dfbc5d",
-            "6936f0f50012d41ae47d5599",
-            "69396133cf14434b3961e722",
-            "6947421b5ed4b81132777692",
-            "694768565ed4b811327781af",
-            "6a245da8e2ec8410af11582c",
-            "6a245e1fe2ec8410af11582d",
-            "6a245f29e2ec8410af11582e",
-            "6a246a3c62352652aae20bc6"
-        )
-    );
+    private static final Set<String> BUNDLED_PRODUCT_IMAGES = new HashSet<>();
     private static TextBox apiKeyBox;
     private static TextBox quantityBox;
     private static GuiScreen reference;
